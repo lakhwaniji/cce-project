@@ -1,0 +1,104 @@
+
+.signin-container{
+    margin: 2rem 2rem 2rem;
+    border: 16px solid var(--dark-blue);
+    border-radius: 24px;
+    height: calc(100vh - 4rem);
+    box-sizing: border-box;
+}
+
+
+.signin-flex{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    height: calc(100vh - 4rem - 16px );
+}
+
+.signin-flex-1{
+    width: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.signin-flex-1 img{
+    width: 20%;
+    margin: auto;
+}
+
+.signin-flex-2{
+    width: 60rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+.signin-flex-2 img{
+    width: 70%;
+    text-align: center;
+}
+.heading_signin{
+    font-weight:700;
+    font-size: var(--h2-font-size);
+    color: var(--dark-grey);
+    text-align: center;
+    margin: var(--mb-1);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+form div{
+    color: var(--dark-grey);
+    font-weight: 600;
+    margin: .25rem;
+}
+.input_field{
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+.input_field input{
+    padding: .5rem;
+    font-weight: 400;
+    border-radius: 10px;
+    width: 80%;
+    border: 1px solid rgba(0, 0, 0, 0.505);
+    color: var(--dark-grey);;
+}
+.input_field img{
+    width: 45px;
+}
+
+.input_box{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.signin_button{
+    margin-top: 2rem;
+    font-size: 1rem;
+    text-decoration: none;
+    border: none;
+    background-color: var(--orange);
+    padding: .5rem;
+    border-radius: 10px;
+    color: #ffff;
+    font-family: "Poppins";
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-left: 1.5rem;
+    margin-right: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signin_button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}

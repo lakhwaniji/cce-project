@@ -1,9 +1,9 @@
 import './App.css';
-import SignIn from './components/SignIn/SignIn';
+import { FacultyUploadPage } from "./components/FacultyUploadPage";
 function App() {
   return (
     <div className="App">
-      <SignIn/>
+      <FacultyUploadPage />
     </div>
   );
 }

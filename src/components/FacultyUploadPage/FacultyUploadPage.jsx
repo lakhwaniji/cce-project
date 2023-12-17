@@ -29,7 +29,7 @@ const FacultyUploadPage = () => {
                     <div className="achivement-type">Details</div>
                     <div className="frame-child" />
                 </div>
-                <div className="upload-button" onClick={onUploadButtonContainerClick}>
+                <div className="upload-button">
                     <img
                         className="carbonadd-filled-icon"
                         alt=""
@@ -37,14 +37,14 @@ const FacultyUploadPage = () => {
                     />
                     <div className="achivement-type">Upload Documents</div>
                 </div>
-                <div className="upload-button1" onClick={onUploadButtonContainer1Click}>
+                <div className="upload-button1">
                     <div className="achivement-type">Submit</div>
                 </div>
             </div>
             <div className="navbar">
                 <div className="wrapper-rectangle-1-parent">
                     <div className="wrapper-rectangle-1">
-                        <img src={ManipalLogo} alt="Manipal Logo" />
+                        <img src={ManipalLogo} alt="Manipal Logo" id="manipallogo" />
                     </div>
                     <div className="contact-us-wrapper">
                         <div className="contact-us">Contact Us</div>

@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "Ach_title": "Research paper",
+    "Faculty_Incharge": " Mr Arjun Singh",
+    "Ach_type": " Faculty Upload",
+    "Uploaded_date": "11th oct 2023",
+    "View": "View"
+  },
+
+  {
+    "id": 2,
+    "Ach_title": "Research paper",
+    "Faculty_Incharge": " Mr Arjun Singh",
+    "Ach_type": " Faculty Upload",
+    "Uploaded_date": "11th oct 2023",
+    "View": "View"
+  },
+  {
+    "id": 3,
+    "Ach_title": "Research paper",
+    "Faculty_Incharge": " Mr Arjun Singh",
+    "Ach_type": " Faculty Upload",
+    "Uploaded_date": "11th oct 2023",
+    "View": "View"
+  },
+  {
+    "id": 4,
+    "Ach_title": "Research paper",
+    "Faculty_Incharge": " Mr Arjun Singh",
+    "Ach_type": " Faculty Upload",
+    "Uploaded_date": "11th oct 2023",
+    "View": "View"
+  }
+]

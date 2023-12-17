@@ -1,5 +1,6 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -12,7 +13,7 @@
   --dark-blue: #1E2772;
   --orange:#FD7401;
   --text-heading: #1E2772;
-  --body-color: #F2F2F2;
+  --body-color: #ffffff;
   --dark-grey: #575757;
 
  /*========== Font and typography ==========*/
@@ -49,4 +50,13 @@
 .section {
   margin: 2rem 2rem 2rem;
   box-sizing: border-box;
+}
+
+/*Here I am specifying the css of icons*/
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
 }

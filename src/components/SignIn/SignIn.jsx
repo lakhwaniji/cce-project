@@ -15,7 +15,7 @@ const SignIn=()=>{
                         <div className="input_box">
                             <div className="label">Email Address</div>
                             <div className="input_field">
-                                <input name="email" type="text" placeholder="alex@jaipur.manipal.edu"/>
+                                <input name="email" type="email" placeholder="alex@jaipur.manipal.edu"/>
                                 <img src={email} alt="Mail_Logo"/>
                             </div>
                         </div>

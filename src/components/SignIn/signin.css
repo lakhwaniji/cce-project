@@ -68,7 +68,7 @@ form div{
     padding: .5rem;
     font-weight: 400;
     border-radius: 10px;
-    width: 80%;
+    width: 100%;
     border: 1px solid rgba(0, 0, 0, 0.505);
     color: var(--dark-grey);;
 }
@@ -100,5 +100,9 @@ form div{
 
 .signin_button:hover{
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+i{
+    padding: .5rem;
 }

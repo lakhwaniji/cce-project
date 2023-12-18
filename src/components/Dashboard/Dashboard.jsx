@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Dash.css";
 import search from "../../assets/search-icon.svg";
 import exp from "../../assets/export-icon.svg";
 import data from "../../sample-data/dash-data.json";
+import DashModal from "./DashModal";
 
 const Dashboard = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [currItem, setCurrItem] = useState({});
   return (
     <>
       <div className="container">
@@ -19,7 +22,7 @@ const Dashboard = () => {
 
               <div
                 className="form-check form-check-inline form-check-reverse"
-                style={{ "margin-right": "1.3rem" }}
+                style={{ marginRight: "1.3rem" }}
               >
                 <input
                   className="form-check-input"
@@ -33,7 +36,7 @@ const Dashboard = () => {
               </div>
               <div
                 className="form-check form-check-inline form-check-reverse"
-                style={{ "margin-right": "1.3rem" }}
+                style={{ marginRight: "1.3rem" }}
               >
                 <input
                   className="form-check-input"
@@ -71,7 +74,7 @@ const Dashboard = () => {
           </div>
 
           <div className="bottom table-responsive">
-            <table class="table table-hover align-middle">
+            <table className="table table-hover align-middle">
               <thead>
                 <tr>
                   <th scope="col">Achievement Title</th>
@@ -81,14 +84,20 @@ const Dashboard = () => {
                   <th scope="col">View</th>
                 </tr>
               </thead>
-              <tbody class="table-group-divider">
+              <tbody className="table-group-divider">
                 {data.map((item) => {
                   return (
-                    <tr>
-                      <td>{item.Ach_title}</td>
-                      <td>{item.Faculty_Incharge}</td>
-                      <td>{item.Ach_type}</td>
-                      <td>{item.Uploaded_date}</td>
+                    <tr
+                      onClick={() => {
+                        setIsOpen(true);
+                        setCurrItem(item);
+                      }}
+                      key={item.id}
+                    >
+                      <td>{item["Achievement Title"]}</td>
+                      <td>{item["Faculty Incharge"]}</td>
+                      <td>{item["Achievement Type"]}</td>
+                      <td>{item["Uploaded Date"]}</td>
                       <td>{item.View}</td>
                     </tr>
                   );
@@ -96,6 +105,7 @@ const Dashboard = () => {
               </tbody>
             </table>
           </div>
+          <DashModal open={isOpen} onClose={() => setIsOpen(false)} item={currItem} />
         </div>
       </div>
     </>

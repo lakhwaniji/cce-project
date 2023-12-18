@@ -1,35 +1,47 @@
 [
   {
     "id": 1,
-    "Ach_title": "Research paper",
-    "Faculty_Incharge": " Mr Arjun Singh",
-    "Ach_type": " Faculty Upload",
-    "Uploaded_date": "11th oct 2023",
-    "View": "View"
+    "Achievement Title": "Research paper",
+    "Faculty Incharge": " Mr Arjun Singh",
+    "Achievement Type": " Faculty Upload",
+    "Uploaded Date": "11th oct 2023",
+    "Published Date": "11th oct 2023",
+    "Expiry Date": "11th oct 2023",
+    "View": "View",
+    "Achievement Details": "fjewfjejrwhfjhrjwehfjjfewnjfjwenjfnwjnfjwnejfnjwnjenjwfnjnwejnfjwefbhwbhfbhwbhfbhwbfhbhwbhbhewbhfbwhbhfewbfhwbhfbwhbfhbwhfbhwbfhwbhfbhewjfbhwjfwbhjfw"
   },
 
   {
     "id": 2,
-    "Ach_title": "Research paper",
-    "Faculty_Incharge": " Mr Arjun Singh",
-    "Ach_type": " Faculty Upload",
-    "Uploaded_date": "11th oct 2023",
-    "View": "View"
+    "Achievement Title": "Research paper",
+    "Faculty Incharge": "GL Saini",
+    "Achievement Type": " Faculty Upload",
+    "Uploaded Date": "11th oct 2023",
+    "Published Date": "11th oct 2023",
+    "Expiry Date": "11th oct 2023",
+    "View": "View",
+    "Achievement Details": "fjewfjejrwhfjhrjwehfjjfewnjfjwenjfnwjnfjwnejfnjwnjenjwfnjnwejnfjwefbhwbhfbhwbhfbhwbfhbhwbhbhewbhfbwhbhfewbfhwbhfbwhbfhbwhfbhwbfhwbhfbhewjfbhwjfwbhjfw"
   },
   {
     "id": 3,
-    "Ach_title": "Research paper",
-    "Faculty_Incharge": " Mr Arjun Singh",
-    "Ach_type": " Faculty Upload",
-    "Uploaded_date": "11th oct 2023",
-    "View": "View"
+    "Achievement Title": "Research paper",
+    "Faculty Incharge": "Saurabh Verma",
+    "Achievement Type": " Faculty Upload",
+    "Uploaded Date": "11th oct 2023",
+    "Published Date": "11th oct 2023",
+    "Expiry Date": "11th oct 2023",
+    "View": "View",
+    "Achievement Details": "fjewfjejrwhfjhrjwehfjjfewnjfjwenjfnwjnfjwnejfnjwnjenjwfnjnwejnfjwefbhwbhfbhwbhfbhwbfhbhwbhbhewbhfbwhbhfewbfhwbhfbwhbfhbwhfbhwbfhwbhfbhewjfbhwjfwbhjfw"
   },
   {
     "id": 4,
-    "Ach_title": "Research paper",
-    "Faculty_Incharge": " Mr Arjun Singh",
-    "Ach_type": " Faculty Upload",
-    "Uploaded_date": "11th oct 2023",
-    "View": "View"
+    "Achievement Title": "Research paper",
+    "Faculty Incharge": "Saumitra Gangwar",
+    "Achievement Type": " Faculty Upload",
+    "Uploaded Date": "11th oct 2023",
+    "Published Date": "11th oct 2023",
+    "Expiry Date": "11th oct 2023",
+    "View": "View",
+    "Achievement Details": "fjewfjejrwhfjhrjwehfjjfewnjfjwenjfnwjnfjwnejfnjwnjenjwfnjnwejnfjwefbhwbhfbhwbhfbhwbfhbhwbhbhewbhfbwhbhfewbfhwbhfbwhbfhbwhfbhwbfhwbhfbhewjfbhwjfwbhjfw"
   }
 ]

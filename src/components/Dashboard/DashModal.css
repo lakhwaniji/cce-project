@@ -17,8 +17,8 @@
   z-index: 1000;
   border-radius: 10px;
   border: 0.15rem solid rgba(0, 0, 0, 0.5);
-  width: 50%;
-  height: 60%;
+  min-width: 50%;
+  min-height: 60%;
   user-select: text;
   display: flex;
   flex-direction: column;
@@ -62,9 +62,10 @@ ul {
   color: #ffffff;
   border: none;
   border-radius: 4px;
-  padding: 0.5% 1.5%;
+  padding: 1% 1.5%;
   user-select: none;
-  margin-bottom: 2rem;
+  margin-bottom: 3%;
+  margin-top: 1.5%;
 }
 
 .dwdBtn:active {
@@ -87,5 +88,5 @@ ul {
   justify-content: center;
   align-items: center;
   word-break: break-all;
-  margin: 0 6rem 0 6rem;
+  margin: 0 10% 0.5rem 10%;
 }

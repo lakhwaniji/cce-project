@@ -22,7 +22,7 @@ background-color: #994500;
 .dash-head {
   text-align: center;
   color: #1e2772;
-  font-size: 1.3rem;
+  font-size: 110%;
 }
 
 .top {
@@ -80,7 +80,7 @@ input[type="search" i]::-webkit-search-cancel-button {
   border-radius: 4px;
   padding: 0.5% 1.5%;
   user-select: none;
-  margin: 1rem 2rem 0 0;
+  margin: 1rem 2rem 1rem 0;
 }
 
 .expBtn:active {

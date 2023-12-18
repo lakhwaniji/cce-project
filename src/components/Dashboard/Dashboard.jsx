@@ -30,7 +30,10 @@ const Dashboard = () => {
                   value="myUpload"
                   id="myUpload"
                 />
-                <label className="form-check-label" htmlFor="myUpload">
+                <label
+                  className="form-check-label"
+                  htmlFor="myUpload"
+                >
                   My Upload
                 </label>
               </div>
@@ -105,7 +108,11 @@ const Dashboard = () => {
               </tbody>
             </table>
           </div>
-          <DashModal open={isOpen} onClose={() => setIsOpen(false)} item={currItem} />
+          <DashModal
+            open={isOpen}
+            onClose={() => setIsOpen(false)}
+            item={currItem}
+          />
         </div>
       </div>
     </>

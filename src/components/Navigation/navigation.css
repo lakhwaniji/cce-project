@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+nav{
+    width: calc(100vw - 8rem);
+    height: 10vh;
+    z-index: var(--z-fixed);
+    background-color: var(--body-color);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+    border-bottom: 1px solid var(--dark-blue);
+}
+nav img{
+    width: 5rem;
+}
+.nav_list{
+    display: flex;
+    column-gap: 2rem;
+    list-style-type: none;
+}
+.nav_list a{
+    text-decoration: none;
+    color: var(--dark-blue);
+    font-size: 1rem;
+}
+.nav_list li{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 1px solid var(--dark-blue);
+    padding: .5rem;
+}
+.nav_list li:hover{
+transform: scale(1.05);
+}

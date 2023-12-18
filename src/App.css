@@ -1,7 +1,7 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3rem;
@@ -59,4 +59,11 @@
   'wght' 400,
   'GRAD' 0,
   'opsz' 24
+}
+
+/*Footer Properties*/
+footer{
+  text-align: center;
+  font-size: .8rem;
+  color: var(--dark-grey);
 }

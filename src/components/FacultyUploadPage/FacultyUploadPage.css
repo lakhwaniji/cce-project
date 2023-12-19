@@ -307,8 +307,7 @@ body {
 }
 
 #manipallogo {
-    padding: 0.1em;
-    width: 100%;
+    width: 110%;
     aspect-ratio: 1 / 1;
     object-fit: scale-down;
 }

@@ -3,7 +3,7 @@ import "./Dash.css";
 import search from "../../assets/search-icon.svg";
 import exp from "../../assets/export-icon.svg";
 import data from "../../sample-data/dash-data.json";
-import DashModal from "./DashModal";
+import DashModal from './DashModal';
 
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -7,8 +7,8 @@ background-color: #994500;
  */
 
 .container {
-  margin: 0;
-  height: 78%;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--dark-blue);
 }
 .content {
   border: solid 1px #1e2772;
@@ -81,18 +81,10 @@ input[type="search" i]::-webkit-search-cancel-button {
   padding: 0.5% 1.5%;
   user-select: none;
   margin: 1rem 2rem 1rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.expBtn:active {
-  background-color: #994500;
-  box-shadow: 0 0 0 0.23rem #c2dbfe;
-  outline-style: solid;
-  outline-width: 0.02rem;
-  outline-offset: 0rem;
-  outline-color: #86b7fe;
-  box-shadow: 0 0 0 0.23rem #c2dbfe;
-}
 
 .expBtn:hover {
-  background-color: #be5500;
+  transform: scale(1.05);
 }

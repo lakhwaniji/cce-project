@@ -4,7 +4,7 @@ import Lockillustration from '../../assets/lock_illustrations.jpg'
 import ManipalLogo from '../../assets/logo.png'
 import email from '../../assets/mail.svg'
 import password from '../../assets/password.svg'
-const SignIn=()=>{
+const SignIn=({handleLogin})=>{
     return(
         <div className="signin-container">
             <div className="signin-flex">
@@ -26,7 +26,7 @@ const SignIn=()=>{
                             <img src={password} alt="Password_Logo"/>
                         </div>
                         </div>
-                        <input type="submit" className="signin_button" value="Login Now"/>
+                        <input type="button" className="signin_button" value="Login Now" onClick={handleLogin}/>
                     </form>
                 </div>
                 <div className="signin-flex-2">

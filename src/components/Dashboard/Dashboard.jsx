@@ -114,6 +114,9 @@ const Dashboard = () => {
             item={currItem}
           />
         </div>
+        <footer>
+            © [2023] [Love, Aadhya, Ananya, Vedansh] | This project is developed by a student's of Manipal University Jaipur | Designed for Department of CCE | All rights reserved
+        </footer>
       </div>
     </>
   );

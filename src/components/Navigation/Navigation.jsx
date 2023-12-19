@@ -1,7 +1,11 @@
 import React from "react";
 import Logo from '../../assets/logo.png';
 import './navigation.css';
-const Navigation=()=>{
+const Navigation=({handleLogout})=>{
+
+    const logout=()=>{
+        handleLogout();
+    }
     return(
         <div>
             <nav>
@@ -9,14 +13,14 @@ const Navigation=()=>{
                 <div className="nav_options">
                     <ul className="nav_list">
                         <li className="nav_item">
-                            <a href="#home">
+                            <a href="/">
                                 Home
                             </a>
                             </li>
-                        <li className="nav_item"><a href="#dashboard">
+                        <li className="nav_item"><a href="/dashboard">
                         DashBoard
                             </a></li>
-                        <li className="nav_item"><a href="#studentupload">
+                        <li className="nav_item"><a href="#" onClick={logout}>
                                 Log Out
                             </a></li>
                         <li className="nav_item"><a href="#aboutus">

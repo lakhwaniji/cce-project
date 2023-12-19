@@ -18,11 +18,11 @@ const DashModal = ({ open, onClose, item }) => {
             {console.log(item)}
             {Object.keys(item).map((key) => {
               if (
-                key == "Achievement Title" ||
-                key == "Faculty Incharge" ||
-                key == "Published Date" ||
-                key == "Expiry Date" ||
-                key == "Achievement Details"
+                key === "Achievement Title" ||
+                key === "Faculty Incharge" ||
+                key === "Published Date" ||
+                key === "Expiry Date" ||
+                key === "Achievement Details"
               ) {
                 return (
                   <div key={item.id} className="liItem">

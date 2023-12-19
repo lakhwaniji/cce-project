@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
 nav{
-    width: calc(100vw - 8rem);
-    height: 10vh;
     z-index: var(--z-fixed);
     background-color: var(--body-color);
     padding-top: 2rem;

@@ -28,7 +28,7 @@ const Home=()=>{
                         <i class="material-symbols-outlined">
                             dashboard
                         </i>
-                            <a href="#dashboard">Dash Board</a>
+                            <a href="/dashboard">Dash Board</a>
                         </li>
                         
                     </ul>

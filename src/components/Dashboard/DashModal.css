@@ -66,6 +66,7 @@ ul {
   user-select: none;
   margin-bottom: 3%;
   margin-top: 1.5%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dwdBtn:active {
@@ -79,7 +80,7 @@ ul {
 }
 
 .dwdBtn:hover {
-  background-color: #be5500;
+  transform: scale(1.05);
 }
 
 .modalContent {

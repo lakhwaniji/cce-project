@@ -2,7 +2,7 @@
 
 nav{
     z-index: var(--z-fixed);
-    background-color: var(--body-color);
+    background-color: #ffff;
     padding-top: 2rem;
     padding-bottom: 2rem;
     padding-left: 4rem;

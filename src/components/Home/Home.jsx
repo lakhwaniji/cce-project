@@ -14,7 +14,7 @@ const Home=()=>{
                             <i class="material-symbols-outlined">
                                 add_circle
                             </i>
-                            <a href="#studentupload">
+                            <a href="/upload_stu_data">
                                 Student Upload
                             </a>
                         </li>
@@ -22,7 +22,7 @@ const Home=()=>{
                             <i class="material-symbols-outlined">
                                 add_circle
                             </i>
-                            <a href="#facultyupload">Faculty Upload</a>
+                            <a href="/upload_fac_data">Faculty Upload</a>
                         </li>
                         <li>
                         <i class="material-symbols-outlined">

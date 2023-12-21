@@ -8,6 +8,8 @@ import DashModal from "./DashModal";
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currItem, setCurrItem] = useState({});
+  const [myUploadFilter, setMyUploadFilter] = useState(false);
+  const [studentUploadFilter, setStudentUploadFilter] = useState(false);
   return (
     <>
       <div className="container">
@@ -29,11 +31,9 @@ const Dashboard = () => {
                   type="checkbox"
                   value="myUpload"
                   id="myUpload"
+                  onChange={() => setMyUploadFilter(!myUploadFilter)}
                 />
-                <label
-                  className="form-check-label"
-                  htmlFor="myUpload"
-                >
+                <label className="form-check-label" htmlFor="myUpload">
                   My Upload
                 </label>
               </div>
@@ -46,6 +46,7 @@ const Dashboard = () => {
                   type="checkbox"
                   value="tudentUpload"
                   id="studentUpload"
+                  onChange={() => setStudentUploadFilter(!studentUploadFilter)}
                 />
                 <label className="form-check-label" htmlFor="studentUpload">
                   Student Upload
@@ -88,23 +89,94 @@ const Dashboard = () => {
                 </tr>
               </thead>
               <tbody className="table-group-divider">
-                {data.map((item) => {
-                  return (
-                    <tr
-                      onClick={() => {
-                        setIsOpen(true);
-                        setCurrItem(item);
-                      }}
-                      key={item.id}
-                    >
-                      <td>{item["Achievement Title"]}</td>
-                      <td>{item["Faculty Incharge"]}</td>
-                      <td>{item["Achievement Type"]}</td>
-                      <td>{item["Uploaded Date"]}</td>
-                      <td>{item.View}</td>
-                    </tr>
-                  );
-                })}
+                {!myUploadFilter &&
+                  !studentUploadFilter &&
+                  data.map((item) => {
+                    return (
+                      <tr
+                        onClick={() => {
+                          setIsOpen(true);
+                          setCurrItem(item);
+                        }}
+                        key={item.id}
+                      >
+                        <td>{item["Achievement Title"]}</td>
+                        <td>{item["Faculty Incharge"]}</td>
+                        <td>{item["Achievement Type"]}</td>
+                        <td>{item["Uploaded Date"]}</td>
+                        <td>{item.View}</td>
+                      </tr>
+                    );
+                  })}
+                {myUploadFilter &&
+                  !studentUploadFilter &&
+                  data
+                    .filter((item) => {
+                      if (item["Student Upload"]) {
+                        return false;
+                      } else return true;
+                    })
+                    .map((item) => {
+                      return (
+                        <tr
+                          onClick={() => {
+                            setIsOpen(true);
+                            setCurrItem(item);
+                          }}
+                          key={item.id}
+                        >
+                          <td>{item["Achievement Title"]}</td>
+                          <td>{item["Faculty Incharge"]}</td>
+                          <td>{item["Achievement Type"]}</td>
+                          <td>{item["Uploaded Date"]}</td>
+                          <td>{item.View}</td>
+                        </tr>
+                      );
+                    })}
+                {studentUploadFilter &&
+                  !myUploadFilter &&
+                  data
+                    .filter((item) => {
+                      if (item["Student Upload"]) {
+                        return true;
+                      } else return false;
+                    })
+                    .map((item) => {
+                      return (
+                        <tr
+                          onClick={() => {
+                            setIsOpen(true);
+                            setCurrItem(item);
+                          }}
+                          key={item.id}
+                        >
+                          <td>{item["Achievement Title"]}</td>
+                          <td>{item["Faculty Incharge"]}</td>
+                          <td>{item["Achievement Type"]}</td>
+                          <td>{item["Uploaded Date"]}</td>
+                          <td>{item.View}</td>
+                        </tr>
+                      );
+                    })}
+                {myUploadFilter &&
+                  studentUploadFilter &&
+                  data.map((item) => {
+                    return (
+                      <tr
+                        onClick={() => {
+                          setIsOpen(true);
+                          setCurrItem(item);
+                        }}
+                        key={item.id}
+                      >
+                        <td>{item["Achievement Title"]}</td>
+                        <td>{item["Faculty Incharge"]}</td>
+                        <td>{item["Achievement Type"]}</td>
+                        <td>{item["Uploaded Date"]}</td>
+                        <td>{item.View}</td>
+                      </tr>
+                    );
+                  })}
               </tbody>
             </table>
           </div>

@@ -23,6 +23,9 @@ const Navigation=({handleLogout})=>{
                         <li className="nav_item"><a href="#" onClick={logout}>
                                 Log Out
                             </a></li>
+                        <li className="nav_item"><a href="/create_user">
+                            Create_User
+                        </a></li>
                         <li className="nav_item"><a href="#aboutus">
                                 About Us
                             </a></li>

@@ -4,14 +4,60 @@ import Lockillustration from '../../assets/lock_illustrations.jpg'
 import ManipalLogo from '../../assets/logo.png'
 import email from '../../assets/mail.svg'
 import password from '../../assets/password.svg'
-const SignIn=({handleLogin})=>{
+const SignIn=({setUser})=>{
+    const handleLogin = async (event) => {
+        event.preventDefault();
+    
+        const formData = new FormData(event.target);
+        const email = formData.get('email');
+        const password = formData.get('password');
+        try {
+          // Perform authentication by sending a POST request to the server
+          const response = await fetch('http://localhost:8000/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+          });
+    
+          // Check if the request was successful (status code 2xx)
+          if (response.ok) {
+            const { token } = await response.json();
+    
+            // Decode the token to get user information
+            const decodedUser = parseJwt(token);
+    
+            // Set the user in the parent component
+            setUser(decodedUser);
+    
+            // Store the token in local storage for future use
+            localStorage.setItem('token', token);
+          } else {
+            // Handle authentication failure
+            window.alert('Invalid credentials. Please try again.');
+          }
+        } catch (error) {
+          console.error('Error during login:', error);
+          window.alert('Internal Server Error. Please try again later.');
+        }
+      };
+    
+      // Function to decode JWT token
+      const parseJwt = (token) => {
+        try {
+          return JSON.parse(atob(token.split('.')[1]));
+        } catch (e) {
+          return null;
+        }
+      };
     return(
         <div className="signin-container">
             <div className="signin-flex">
                 <div className="signin-flex-1">
                     <img src={ManipalLogo} alt="Manipal Logo"/>
                     <div className="heading_signin">Enter Your Credentials</div>
-                    <form action="">
+                    <form onSubmit={handleLogin}>
                         <div className="input_box">
                             <div className="label">Email Address</div>
                             <div className="input_field">
@@ -26,7 +72,7 @@ const SignIn=({handleLogin})=>{
                             <img src={password} alt="Password_Logo"/>
                         </div>
                         </div>
-                        <input type="button" className="signin_button" value="Login Now" onClick={handleLogin}/>
+                        <input type="submit" className="signin_button" value="Login Now"/>
                     </form>
                 </div>
                 <div className="signin-flex-2">

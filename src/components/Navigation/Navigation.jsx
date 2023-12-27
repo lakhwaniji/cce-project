@@ -1,10 +1,11 @@
 import React from "react";
 import Logo from '../../assets/logo.png';
 import './navigation.css';
-const Navigation=({handleLogout})=>{
+const Navigation=({setUser})=>{
 
     const logout=()=>{
-        handleLogout();
+        localStorage.removeItem('token');
+        setUser(null);
     }
     return(
         <div>

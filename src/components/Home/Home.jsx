@@ -1,17 +1,17 @@
 import React from "react";
 import './home.css'
-const Home=()=>{
+const Home=({username})=>{
     return(
         <div className="home_container">
             <div className="home_content">
                 <div className="home_user">
                     <div className="home_title">Hello</div>
-                    <div className="home_title">Dr Arjun Singh </div>
+                    <div className="home_title">Dr {username}</div>
                 </div>
                 <div className="home_buttons">
                     <ul>
                         <li>
-                            <i class="material-symbols-outlined">
+                            <i className="material-symbols-outlined">
                                 add_circle
                             </i>
                             <a href="/upload_stu_data">
@@ -19,13 +19,13 @@ const Home=()=>{
                             </a>
                         </li>
                         <li>
-                            <i class="material-symbols-outlined">
+                            <i className="material-symbols-outlined">
                                 add_circle
                             </i>
                             <a href="/upload_fac_data">Faculty Upload</a>
                         </li>
                         <li>
-                        <i class="material-symbols-outlined">
+                        <i className="material-symbols-outlined">
                             dashboard
                         </i>
                             <a href="/dashboard">Dash Board</a>

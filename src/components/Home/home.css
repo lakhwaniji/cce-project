@@ -1,0 +1,52 @@
+.home_content{
+    margin: 4rem;
+    height: 60vh;
+}
+
+.home_title{
+    font-family: "Inter";
+    font-size: var(--big-font-size);
+}
+.home_buttons ul{
+    list-style-type: none;
+}
+.home_buttons li{
+    margin: 2.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--orange);
+    text-decoration: none;
+    font-family: "Inter";
+    font-size: 1rem;
+    color: white;
+    width: 12rem;
+
+}
+
+
+.home_buttons li a{
+    padding: .8rem;
+    text-decoration: none;
+    font-family: "Inter";
+    font-size: .8rem;
+    color: white;
+    font-weight: 700;
+    
+}
+
+.home_buttons li:hover{
+    transform: scale(1.05);
+}
+
+.material-symbols-outlined{
+    margin-left: .1rem;
+}
+.home_buttons{
+    display: flex;
+    justify-content: center;
+}
+.home_container{
+    border-bottom: 1px solid var(--dark-blue);
+}

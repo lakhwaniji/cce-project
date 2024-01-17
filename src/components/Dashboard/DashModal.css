@@ -1,0 +1,93 @@
+.modalBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+.modalContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255, 255, 255);
+  padding: 1rem;
+  z-index: 1000;
+  border-radius: 10px;
+  border: 0.15rem solid rgba(0, 0, 0, 0.5);
+  min-width: 50%;
+  min-height: 60%;
+  user-select: text;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.closeBtnDiv {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.closeBtn {
+  border: none;
+  background-color: #fff;
+}
+
+.listDiv {
+}
+
+.liItem {
+  padding: 0.3rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.downloadBtn-div {
+  display: flex;
+  justify-content: center;
+  bottom: 0px;
+}
+
+.dwdBtn {
+  background-color: #fd7401;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 1% 1.5%;
+  user-select: none;
+  margin-bottom: 3%;
+  margin-top: 1.5%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dwdBtn:active {
+  background-color: #994500;
+  box-shadow: 0 0 0 0.23rem #c2dbfe;
+  outline-style: solid;
+  outline-width: 0.02rem;
+  outline-offset: 0rem;
+  outline-color: #86b7fe;
+  box-shadow: 0 0 0 0.23rem #c2dbfe;
+}
+
+.dwdBtn:hover {
+  transform: scale(1.05);
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  word-break: break-all;
+  margin: 0 10% 0.5rem 10%;
+}

@@ -19,6 +19,7 @@ const App=()=> {
       try {
         // Decode the token to get user information
         const decodedUser = jwtDecode(token);
+        console.log(decodedUser)
         setUser(decodedUser);
       } catch (error) {
         console.error('Error decoding token:', error);
@@ -37,7 +38,7 @@ const App=()=> {
             <Route path='/' element={<Home username={user.name}/>}/>
             <Route path='/dashboard' element={<Dashboard user={{user}}/>}/>
             <Route path='/upload_stu_data' element={<UploadStuData user={{user}}/>}/>
-            <Route path='/upload_fac_data' element={<UploadFacData user={{user}}/>}/>
+            <Route path='/upload_fac_data' element={<UploadFacData user_email={user.email}/>}/>
             <Route path='/create_user' element={<UserCreation user_role={user.role}/>}/>
         </Routes>
       </Router>

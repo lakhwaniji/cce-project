@@ -1,3 +1,11 @@
+const multer = require('multer');
+
+const { MongoClient, GridFSBucket } = require('mongodb');
+
+const path = require('path');
+
+const crypto = require('crypto');
+
 const express=require('express');
 
 const cors=require('cors')
@@ -6,14 +14,19 @@ const app=express();
 
 const bcrypt = require('bcrypt')
 
+const gridfs = require('gridfs-stream');
+
 app.use(cors())
 
 const mongoose=require("mongoose");
 
-app.use(express.json());
 
 const jwt=require('jsonwebtoken');
 
+const bodyParser = require('body-parser');
+
+app.use(express.json({limit: '50mb'}));
+app.use(express.urlencoded({limit: '50mb'}));
 
 app.get('/',(req,res)=>{
     res.send("Hello Express");
@@ -26,6 +39,13 @@ mongoose.connect(mongourl,{
 })
 .then(()=>{console.log("Connected to Database")})
 .catch((e)=>console.log(e));
+
+let gfs;
+mongoose.connection.once('open', () => {
+  gfs = gridfs(mongoose.connection.db, mongoose.mongo);
+  gfs.collection('uploads');
+});
+
 
 function generateToken(user) {
     const payload = {
@@ -92,6 +112,49 @@ app.post('/register', async (req, res) => {
     }
   });
 
+
+  const storage = multer.memoryStorage(); // Store files in memory
+
+  const upload = multer({ storage });
+
+
+  app.post('/upload-data-faculty', upload.array('files'), async (req, res) => {
+      // Extract form data from the request
+      const { achievement_type, exp_date,achievement_details,achievement_title,user_email } = req.body;
+      const promises = req.files.map((file) => {
+        return new Promise((resolve, reject) => {
+          const buffer = Buffer.from(file.buffer);
+          const filename = crypto.randomBytes(16).toString('hex') + path.extname(file.originalname);
+    
+          // Create a write stream to MongoDB
+          const uploadStream = bucket.openUploadStream(filename, {
+            metadata: {
+              achievement_type, 
+              exp_date,
+              achievement_details,
+              achievement_title,
+              user_email
+            },
+          });
+    
+          uploadStream.write(buffer);
+          uploadStream.end(() => {
+            resolve(filename);
+          });
+        });
+      });
+    
+      Promise.all(promises)
+        .then((savedFiles) => {
+          // Now you can save 'name' and 'savedFiles' to MongoDB using Mongoose or your preferred MongoDB library
+    
+          res.status(200).json({ message: 'Files uploaded successfully!', filenames: savedFiles });
+        })
+        .catch((error) => {
+          console.error('Error storing files in MongoDB:', error);
+          res.status(500).json({ message: 'Internal server error' });
+        });
+    });    
 const port = 8000;
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

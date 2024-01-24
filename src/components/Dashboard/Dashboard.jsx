@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Dash.css";
 import search from "../../assets/search-icon.svg";
 import exp from "../../assets/export-icon.svg";
@@ -8,8 +8,14 @@ import DashModal from "./DashModal";
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currItem, setCurrItem] = useState({});
+<<<<<<< Updated upstream
   const [myUploadFilter, setMyUploadFilter] = useState(false);
   const [studentUploadFilter, setStudentUploadFilter] = useState(false);
+=======
+
+  //api endpoint to get all user credentials
+  useEffect(() => {}, []);
+>>>>>>> Stashed changes
   return (
     <>
       <div className="container">
@@ -71,6 +77,7 @@ const Dashboard = () => {
           </div>
 
           <div className="exportBtn-div">
+            {/* api endpoint to download all user credentials */}
             <button className="expBtn">
               <img src={exp} alt="" />
               Export
@@ -186,6 +193,14 @@ const Dashboard = () => {
             item={currItem}
           />
         </div>
+<<<<<<< Updated upstream
+=======
+        <footer>
+          © [2023] [Love, Aadhya, Ananya, Vedansh] | This project is developed
+          by a student's of Manipal University Jaipur | Designed for Department
+          of CCE | All rights reserved
+        </footer>
+>>>>>>> Stashed changes
       </div>
     </>
   );

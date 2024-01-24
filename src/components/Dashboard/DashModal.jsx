@@ -34,6 +34,7 @@ const DashModal = ({ open, onClose, item }) => {
           </div>
           <div className="listDiv">
             <div className="downloadBtn-div">
+              {/* api endpoint to download current credential */}
               <button className="dwdBtn">
                 <img src={exp} alt="" />
                 Download

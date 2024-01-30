@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap");
+
+body {
+    margin: 0;
+    line-height: normal;
+
+}
+
+:root {
+    /* fonts */
+    --font-inter: Inter;
+
+    /* font sizes */
+    --font-size-xs: 0.75rem;
+    --font-size-base: 1rem;
+
+    /* Colors */
+    --body-color: #f2f2f2;
+    --dark-blue: #1e2772;
+    --orange: #fd7401;
+    --color-white: #fff;
+    --color-gainsboro: #e2e1e1;
+    --color-black: #000;
+
+    /* Paddings */
+    --padding-3xs: 2rem;
+    --padding-mini: 2rem;
+    --padding-mid: 2rem;
+
+    /* Border radiuses */
+    --br-3xs: 10px;
+}
+
+
+.loveaadhyaananyavedansh {
+    position: absolute;
+    top: 6.75rem;
+    left: calc(50% - 468px);
+    font-weight: 400;
+}
+
+.footer {
+    position: absolute;
+    top: calc(50% + 247px);
+    left: 0.06rem;
+    border-bottom: 1px solid var(--dark-blue);
+    box-sizing: border-box;
+    width: 100vw;
+    height: 8.56rem;
+    overflow: hidden;
+}
+
+.faculty-upload1 {
+    position: absolute;
+    top: 0.84rem;
+    left: calc(50% - 42.5px);
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.achivement-type {
+    position: relative;
+    font-weight: 600;
+}
+
+.frame-child {
+    position: relative;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-gainsboro);
+    width: 20.38rem;
+    height: 2.13rem;
+}
+
+.achievement-title-parent,
+.achivement-type-parent,
+.details-parent,
+.expiry-date-parent {
+    position: absolute;
+    top: 6.125rem;
+    left: 11.94rem;
+    width: 32.75rem;
+    height: 4rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    justify-content: center;
+    padding: var(--padding-mini) var(--padding-mid);
+    box-sizing: border-box;
+    gap: 3.31rem;
+}
+
+.achievement-title-parent,
+.details-parent,
+.expiry-date-parent {
+    display: flex;
+    top: 12.81rem;
+    left: 12.44rem;
+    gap: 5.8rem;
+    margin-right: 6.38rem;
+    width: 32.4rem;
+    flex: 1;
+}
+
+.achievement-title-parent,
+.details-parent {
+    top: 9.19rem;
+    left: 12.06rem;
+    width: 32.8rem;
+    gap: 2.94rem;
+}
+
+.details-parent {
+    top: 15.88rem;
+    left: 12.56rem;
+    width: 32.4rem;
+    gap: 7.8rem;
+}
+
+.carbonadd-filled-icon {
+    position: relative;
+    width: 1.31rem;
+    height: 1.31rem;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.upload-button {
+    top: 24rem;
+    left: calc(50% - 105.5px);
+    background-color: var(--dark-blue);
+    width: 13.25rem;
+    height: 2.88rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-3xs) var(--padding-mini);
+    gap: 0.5rem;
+    cursor: pointer;
+    color: var(--color-white);
+}
+
+.faculty-upload-parent,
+.upload-button,
+.upload-button1 {
+    position: absolute;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.upload-button1 {
+    top: 29.56rem;
+    left: calc(50% - 105.5px);
+    background-color: var(--orange);
+    border-bottom: 1px solid var(--orange);
+    width: 13.25rem;
+    height: 2.88rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-3xs) var(--padding-mini);
+    cursor: pointer;
+    color: var(--color-white);
+}
+
+.faculty-upload-parent {
+    top: 10.13rem;
+    left: calc(50% - 470px);
+    border: 1px solid var(--dark-blue);
+    width: 58.81rem;
+    height: 35.63rem;
+    font-size: var(--font-size-base);
+}
+
+.wrapper-rectangle-1-child {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    left: 1.5rem;
+    top: 2rem;
+    transform: scale(2.231);
+}
+
+.wrapper-rectangle-1 {
+    position: absolute;
+    top: 1.064rem;
+    left: 4.688rem;
+    width: 5.125rem;
+    height: 5.688rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-us {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 32.5px);
+    font-weight: 600;
+}
+
+.contact-us-wrapper {
+    position: absolute;
+    top: 2.06rem;
+    left: 42.81rem;
+    background-color: var(--body-color);
+    border-bottom: 1px solid var(--dark-blue);
+    box-sizing: border-box;
+    width: 4.81rem;
+    height: 2.25rem;
+    overflow: hidden;
+}
+
+.home {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 17.5px);
+    font-weight: 600;
+}
+
+.home-wrapper {
+    position: absolute;
+    top: 2.06rem;
+    left: 50.5rem;
+    background-color: var(--body-color);
+    border-bottom: 1px solid var(--dark-blue);
+    box-sizing: border-box;
+    width: 4.81rem;
+    height: 2.25rem;
+    overflow: hidden;
+}
+
+.about-us {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 26.5px);
+    font-weight: 600;
+}
+
+.about-us-wrapper {
+    position: absolute;
+    top: 2.06rem;
+    left: 58.19rem;
+    background-color: var(--body-color);
+    border-bottom: 1px solid var(--dark-blue);
+    box-sizing: border-box;
+    width: 4.81rem;
+    height: 2.25rem;
+    overflow: hidden;
+}
+
+.dash-board {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 33.5px);
+    font-weight: 600;
+}
+
+.dash-board-wrapper {
+    position: absolute;
+    top: 2.06rem;
+    left: 65.88rem;
+    background-color: var(--body-color);
+    border-bottom: 1px solid var(--dark-blue);
+    box-sizing: border-box;
+    width: 4.81rem;
+    height: 2.25rem;
+    overflow: hidden;
+}
+
+.wrapper-rectangle-1-parent {
+    position: absolute;
+    top: calc(50% - 46.5px);
+    left: calc(50% - 555px);
+    width: 74.06rem;
+    height: 6.38rem;
+}
+
+.navbar {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid var(--dark-blue);
+    box-sizing: border-box;
+    width: 100vw;
+    height: 8.56rem;
+    overflow: hidden;
+    color: var(--dark-blue);
+}
+
+.faculty-upload {
+    position: relative;
+    background-color: var(--body-color);
+    width: 100vw;
+    height: 52rem;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-xs);
+    color: var(--color-black);
+    font-family: var(--font-inter);
+}
+
+#manipallogo {
+    width: 110%;
+    aspect-ratio: 1 / 1;
+    object-fit: scale-down;
+}

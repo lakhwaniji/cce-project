@@ -21,7 +21,7 @@ const Navigation=({setUser})=>{
                         <li className="nav_item"><a href="/dashboard">
                         DashBoard
                             </a></li>
-                        <li className="nav_item"><a href="#" onClick={logout}>
+                        <li className="nav_item"><a href="/" onClick={logout}>
                                 Log Out
                             </a></li>
                         <li className="nav_item"><a href="/create_user">

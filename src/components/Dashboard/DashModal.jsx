@@ -30,6 +30,7 @@ const DashModal = ({ open, onClose, item }) => {
                   </div>
                 );
               }
+            return ""
             })}
           </div>
           <div className="listDiv">

@@ -11,13 +11,13 @@ const User_Creation=({user_role})=>{
         const username =formData.get('username');
         const role=formData.get('role_type');
         const repassword=formData.get('repassword');
-        if (user_role == "admin"){
-            if (password!=repassword){
+        if (user_role === "admin"){
+            if (password!==repassword){
                 window.alert('Password and repassword does not match');
             }
             else{
                 try{
-                    const response = await fetch('http://localhost:8000/register', {
+                    const response = await fetch('http://localhost:8000/createUser', {
                     method: 'POST',
                     headers: {
                     'Content-Type': 'application/json',

@@ -27,9 +27,8 @@ const SignIn=({setUser})=>{
     
             // Decode the token to get user information
             const decodedUser = parseJwt(token);
-    
             // Set the user in the parent component
-            setUser(decodedUser);
+            setUser(decodedUser.user);
     
             // Store the token in local storage for future use
             localStorage.setItem('token', token);

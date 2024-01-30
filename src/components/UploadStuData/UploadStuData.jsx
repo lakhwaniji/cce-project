@@ -1,17 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./upload_stu_data.css";
 
 const Upload_stu_data = () => {
-    const [selectedFiles, setSelectedFiles] = useState([]);
-    const handleFileChange = (event) => {
-      const files = Array.from(event.target.files);
-      setSelectedFiles(files);
-    };
-
-    const handleUpload=()=>{
-        return "Success";
-    };
-  
     return (
         <div className="container">
             <div className="content">
@@ -68,10 +58,6 @@ const Upload_stu_data = () => {
                             <label>Achievement Details</label>
                             <input type="text" name="achievement_details" placeholder="The paper is published in IEEE on 12 th dec 2023"/>
                         </div>
-                    </div>
-
-                    <div className="upload_file">
-                        <input type="file" onChange={handleFileChange} multiple placeholder='upload'/>
                     </div>
                     <div className='submission'>
                         <button type='submit'>

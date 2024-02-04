@@ -4,6 +4,7 @@ import Lockillustration from '../../assets/lock_illustrations.jpg'
 import ManipalLogo from '../../assets/logo.png'
 import email from '../../assets/mail.svg'
 import password from '../../assets/password.svg'
+import Cookies from 'js-cookie';
 const SignIn=({setUser})=>{
     const handleLogin = async (event) => {
         event.preventDefault();
@@ -24,11 +25,13 @@ const SignIn=({setUser})=>{
           // Check if the request was successful (status code 2xx)
           if (response.ok) {
             const { token } = await response.json();
+            Cookies.set('token', token, { expires: 1 });
     
             // Decode the token to get user information
             const decodedUser = parseJwt(token);
             // Set the user in the parent component
             setUser(decodedUser.user);
+
     
             // Store the token in local storage for future use
             localStorage.setItem('token', token);

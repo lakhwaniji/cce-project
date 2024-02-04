@@ -1,66 +1,102 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./Dash.css";
 import search from "../../assets/search-icon.svg";
 import exp from "../../assets/export-icon.svg";
-import data from "../../sample-data/dash-data.json";
 import DashModal from './DashModal';
+import axios from 'axios';
+import * as XLSX from 'xlsx';
 
 const Dashboard = () => {
+
+  const [fetchedData, setFetchedData] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [currItem, setCurrItem] = useState({});
+  const [fromDate, setFromDate] = useState('');
+  const [toDate, setToDate] = useState('');
+  const [title,setTitle]=useState('');
+  const [faculty,setFaculty]=useState('');
+  let exportedData=[];
+
+  const fetchDataFromServer = async () => {
+    try {
+      // Make a request to your server to fetch data
+      const response = await axios.get('http://localhost:8000/getCredentials',{
+        withCredentials:true,
+      });
+      
+      // Assuming the data is an array, update the state
+      console.log(response.data.credentials);
+      setFetchedData(response.data.credentials);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  const exportData=()=>{
+    console.log(exportedData);
+      const ws = XLSX.utils.json_to_sheet(exportedData);
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+      XLSX.writeFile(wb, 'data.xlsx');
+  }
+
+    const onSetTitle=(e)=>{
+      setTitle(e.target.value)
+    }
+
+    const onSetFaculty=(e)=>{
+      setFaculty(e.target.value)
+    }
+  
+
+  useEffect(() => {
+    fetchDataFromServer();
+    exportedData=[];
+  },[]);
+
+
   return (
     <>
       <div className="container">
         <div className="content">
           <h6 className="dash-head mb-4">Dashbaord</h6>
-
           <div className="top">
             <div className="filtersDiv">
-              <div className="me-3">
-                <strong>Filters</strong>
-              </div>
-
               <div
                 className="form-check form-check-inline form-check-reverse"
                 style={{ marginRight: "1.3rem" }}
               >
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  value="myUpload"
-                  id="myUpload"
-                />
                 <label
-                  className="form-check-label"
+                  className="form-check-label ma"
                   htmlFor="myUpload"
                 >
-                  My Upload
+                  From Date
                 </label>
+                <input type="date" value={fromDate} onChange={(e) => setFromDate(e.target.value)} style={{ marginLeft: "1.3rem" }}/>
               </div>
               <div
                 className="form-check form-check-inline form-check-reverse"
-                style={{ marginRight: "1.3rem" }}
               >
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  value="tudentUpload"
-                  id="studentUpload"
-                />
-                <label className="form-check-label" htmlFor="studentUpload">
-                  Student Upload
+                <label
+                  className="form-check-label ma"
+                  htmlFor="myUpload"
+                >
+                  To Date
                 </label>
+                <input type="date" value={toDate} onChange={(e) => setToDate(e.target.value)} style={{ marginLeft: "1.3rem" }}/>
               </div>
             </div>
+            
             <div className="searchDiv">
               <span className="me-3">
-                <strong>Search</strong>
+                <strong>Achievement_Title</strong>
               </span>
               <div className="me-2">
                 <input
                   type="search"
                   className="formInp"
                   placeholder="Enter text"
+                  onChange={onSetTitle}
                 />
               </div>
               <div>
@@ -69,11 +105,27 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="exportBtn-div">
-            <button className="expBtn">
-              <img src={exp} alt="" />
+          <div className="filter2-div">
+            <button className="Btn" onClick={exportData}>
+              <img src={exp} alt=""/>
               Export
             </button>
+            <div className="searchDiv">
+              <span className="me-3">
+                  <strong>Faculty_Incharge</strong>
+                </span>
+                <div className="me-2">
+                  <input
+                    type="search"
+                    className="formInp"
+                    placeholder="Enter text"
+                    onChange={onSetFaculty}
+                  />
+                </div>
+                <div>
+                <img src={search} alt="" className="mb-2" />
+              </div>
+              </div>
           </div>
 
           <div className="bottom table-responsive">
@@ -82,28 +134,64 @@ const Dashboard = () => {
                 <tr>
                   <th scope="col">Achievement Title</th>
                   <th scope="col">Faculty Incharge</th>
+                  <th scope="col">Category</th>
                   <th scope="col">Achievement Type</th>
                   <th scope="col">Uploaded Date</th>
-                  <th scope="col">View</th>
                 </tr>
               </thead>
               <tbody className="table-group-divider">
-                {data.map((item) => {
-                  return (
-                    <tr
-                      onClick={() => {
-                        setIsOpen(true);
-                        setCurrItem(item);
-                      }}
-                      key={item.id}
-                    >
-                      <td>{item["Achievement Title"]}</td>
-                      <td>{item["Faculty Incharge"]}</td>
-                      <td>{item["Achievement Type"]}</td>
-                      <td>{item["Uploaded Date"]}</td>
-                      <td>{item.View}</td>
-                    </tr>
-                  );
+                {fetchedData.map((item) => {
+                  if(fromDate && toDate){
+                    if(item["Publish_Date"]>=fromDate && item["Publish_Date"]<=toDate && (item["Achievement_Title"].toLowerCase().includes(title.toLowerCase())) && (item["Faculty_Incharge"].toLowerCase().includes(faculty.toLowerCase()))){
+                      exportedData.push(item);
+                      return (
+                        <tr
+                          onClick={() => {
+                            setIsOpen(true);
+                            setCurrItem(item);
+                          }}
+                          key={item._id}
+                        >
+                          <td>{item["Achievement_Title"]}</td>
+                          <td>{item["Faculty_Incharge"]}</td>
+                          <td>{item["category"]}</td>
+                          <td>{item["Achievement_Type"]}</td>
+                          <td>{item["Publish_Date"]}</td>
+                          <td>{item.View}</td>
+                        </tr>
+                      );
+                  }
+                  else{
+                    return null
+                  } 
+
+                    }
+                    else{
+                      if(item["Achievement_Title"].toLowerCase().includes(title.toLowerCase())&& (item["Faculty_Incharge"].toLowerCase().includes(faculty.toLowerCase()))){
+                      exportedData.push(item);
+                      return (
+                        <tr
+                          onClick={() => {
+                            setIsOpen(true);
+                            setCurrItem(item);
+                          }}
+                          key={item._id}
+                        >
+                          <td>{item["Achievement_Title"]}</td>
+                          <td>{item["Faculty_Incharge"]}</td>
+                          <td>{item["category"]}</td>
+                          <td>{item["Achievement_Type"]}</td>
+                          <td>{item["Publish_Date"]}</td>
+                          <td>{"View"}</td>
+                          <td>{item.View}</td>
+                        </tr>
+                      );
+                        }
+                      else{
+                        return null
+                      }
+                    }
+                   
                 })}
               </tbody>
             </table>

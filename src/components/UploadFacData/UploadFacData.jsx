@@ -17,7 +17,7 @@ const Upload_fac_data = () => {
       const data=Object.values(files);
       formData.append('files', data);
        //Make a POST request to the Express server
-      const response = await axios.post('http://localhost:8000/createFacCredentials', formData, {withCredentials: true ,
+      const response = await axios.post('http://192.168.170.13:8000/createFacCredentials', formData, {withCredentials: true ,
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -45,6 +45,7 @@ const Upload_fac_data = () => {
                                 <option value="Research_Paper">Research Paper</option>
                                 <option value="Confrence_Paper">Confrence Paper</option>
                                 <option value="Patent_Publication">Patent Publication</option>
+                                <option value="Faculty_Development_Program">Faculty_Development_Program</option>
                                 <option value="Award">Award</option>
                             </select>
                         </div>
@@ -77,7 +78,7 @@ const Upload_fac_data = () => {
                 </form>
             </div>
             <footer>
-            © [2023] [Love, Aadhya, Ananya, Vedansh] | This project is developed by a student's of Manipal University Jaipur | Designed for Department of CCE | All rights reserved
+            © [2023] | This project is developed by a student's of Manipal University Jaipur | Designed for Department of CCE | All rights reserved
         </footer>
         </div>
     );

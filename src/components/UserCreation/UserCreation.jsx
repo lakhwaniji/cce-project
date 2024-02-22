@@ -17,7 +17,7 @@ const User_Creation=({user_role})=>{
             }
             else{
                 try{
-                    const response = await fetch('http://localhost:8000/createUser', {
+                    const response = await fetch('http://192.168.170.13:8000/createUser', {
                     method: 'POST',
                     headers: {
                     'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ const User_Creation=({user_role})=>{
                 </form>
             </div>
             <footer>
-            © [2023] [Love, Aadhya, Ananya, Vedansh] | This project is developed by a student's of Manipal University Jaipur | Designed for Department of CCE | All rights reserved
+            © [2023]| This project is developed by a student's of Manipal University Jaipur | Designed for Department of CCE | All rights reserved
         </footer>
         </div>
     )

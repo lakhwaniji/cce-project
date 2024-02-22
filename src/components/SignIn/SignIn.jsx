@@ -14,7 +14,7 @@ const SignIn=({setUser})=>{
         const password = formData.get('password');
         try {
           // Perform authentication by sending a POST request to the server
-          const response = await fetch('http://localhost:8000/login', {
+          const response = await fetch('http://192.168.170.13:8000/login', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

@@ -3,8 +3,8 @@
 nav{
     z-index: var(--z-fixed);
     background-color: #ffff;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
     padding-left: 4rem;
     padding-right: 4rem;
     display: flex;

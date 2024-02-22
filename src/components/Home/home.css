@@ -47,6 +47,3 @@
     display: flex;
     justify-content: center;
 }
-.home_container{
-    border-bottom: 1px solid var(--dark-blue);
-}

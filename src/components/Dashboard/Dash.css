@@ -68,12 +68,13 @@ input[type="search" i]::-webkit-search-cancel-button {
   filter: brightness(0%);
 }
 
-.exportBtn-div {
+.filter2-div {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-content: center;
 }
 
-.expBtn {
+.Btn {
   background-color: #fd7401;
   color: #ffffff;
   border: none;
@@ -85,6 +86,6 @@ input[type="search" i]::-webkit-search-cancel-button {
 }
 
 
-.expBtn:hover {
+.Btn:hover {
   transform: scale(1.05);
 }

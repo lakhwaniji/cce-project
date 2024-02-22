@@ -9,6 +9,7 @@ import UploadStuData from './components/UploadStuData/UploadStuData';
 import UploadFacData from './components/UploadFacData/UploadFacData';
 import UserCreation from './components/UserCreation/UserCreation';
 import {jwtDecode} from 'jwt-decode';
+import Cookies from 'js-cookie';
 const App=()=> {
   const [user, setUser] = useState(null);
 
@@ -18,6 +19,7 @@ const App=()=> {
     if (token) {
       try {
         // Decode the token to get user information
+        Cookies.set('token', token, { expires: 1 });
         const decodedUser = jwtDecode(token);
         setUser(decodedUser.user);
       } catch (error) {

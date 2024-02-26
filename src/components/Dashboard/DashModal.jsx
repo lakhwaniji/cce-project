@@ -8,7 +8,7 @@ const DashModal = ({ open, onClose, item }) => {
     const fac=item["Faculty_Incharge"];
     const fileList=item["files"];
     const fileListParam = fileList.join(',');
-    const url = new URL('http://192.168.53.13:8000/dwdCredentials');
+    const url = new URL('http://192.168.170.13:8000/dwdCredentials');
     url.searchParams.append('fileList', fileListParam);
     url.searchParams.append('title', title);
     url.searchParams.append('fac', fac);
